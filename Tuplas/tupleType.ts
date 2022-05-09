@@ -25,3 +25,25 @@ console.log(...listaFrutas);
 listaFrutas.push('Banana');
 
 console.log(...listaFrutas);
+
+// ==> Exemplo 5 - Uso de função com Tupla
+function listarPessoas(nomes: string[], idades: number[]){
+    return [...nomes, ...idades];
+}
+
+let resultado = listarPessoas(['Alessandro', 'Thiago'], [44, 14]);
+console.log(resultado);
+
+// ==> Exemplo 6 - Labeled Tuples com Spread Operator numa função
+type Nome =
+    | [primeiroNome: string, segundoNome: string]
+    | [primeiroNome: string, nomeMeio: string, segundoNome: string]
+
+function criarPessoa(...nome: Nome){
+    return [...nome]
+}
+
+console.log(criarPessoa('Jorge', 'Silva'));
+console.log(criarPessoa('Jorge', 'Tadeu', 'Silva'));
+
+    
